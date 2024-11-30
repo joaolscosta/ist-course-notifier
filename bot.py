@@ -1,15 +1,14 @@
+import os
 import discord
 import requests
 import feedparser
 import asyncio
 
 # Read the bot token
-with open("token.txt", "r") as file:
-    TOKEN = file.read().strip()
+TOKEN = os.getenv("DISCORD_BOT_TOKEN")
 
 # Bot configuration
 COURSE_IDS = [
-    '2816360379851131',  # CSF
     '2816360379851174',  # AP
     '2816360379851175',  # SIRS
     '2816360379851135',  # SSof
