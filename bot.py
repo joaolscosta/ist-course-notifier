@@ -49,12 +49,12 @@ async def check_announcements():
                             if last_announcements[course_id] != latest_title:
                                 last_announcements[course_id] = latest_title
                                 
-                                # Send the new announcement to the "anuncios" channel
-                                channel = discord.utils.get(client.get_all_channels(), name="anuncios")
+                                # Send the new announcement to the "announcements" channel
+                                channel = discord.utils.get(client.get_all_channels(), name="announcements")
                                 if channel:
                                     await channel.send(f"📢 @here\n**{course_name}**:\n{latest_title}\n{latest_link}\n")
                 else:
-                    print(f"Error accessing API for course {course_id}: {response.status_code}")
+                    print(f"Error accessing API for course {course_name}: {response.status_code}")
         except Exception as e:
             print(f"Error: {e}")
 
